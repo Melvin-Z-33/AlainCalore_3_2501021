@@ -1,0 +1,52 @@
+header h1 {
+  text-align: center;
+}
+
+#reservation_texte, #reservation_localisation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Shrikhand", cursive;
+}
+
+#reservation_localisation {
+  background-color: #e5e5e5;
+  height: 50px;
+}
+#reservation_localisation #map-point {
+  margin-right: 15px;
+}
+
+#reservation_texte {
+  flex-direction: column;
+  margin: 20px 0;
+}
+#reservation_texte > * {
+  margin: 20px auto;
+}
+
+footer {
+  background-color: black;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
