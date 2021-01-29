@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,100;1,300;1,400;1,700&family=Shrikhand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/a79dbf0876.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>ohmyfood</title>
 </head>
 <body>
     <header>
@@ -37,49 +37,57 @@
     <section id="restaurant">
         <h3>Restaurants</h3>
         <div id="restaurant_flex">
-            <figure>
-                <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
-                <figcaption>
-                    <h4>La palette du goût</h4>
-                    <p>Ménilmontant</p>
-                    <span><i class="far fa-heart"></i></span>
-                </figcaption>
-            </figure>
-            <figure>
-                <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="">
-                <figcaption>
-                    <h4>La note enchantée</h4>
-                    <p>Charonne</p>
-                    <span><i class="far fa-heart"></i></span>
-                </figcaption>
-            </figure>
-            <figure>
-                <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
-                <figcaption>
-                    <h4>À la française</h4>
-                    <p>Cité Rouge</p>
-                    <span><i class="far fa-heart"></i></span>
-                </figcaption>
-            </figure>
-            <figure>
-                <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
-                <figcaption>
-                    <h4>Le délice des sens</h4>
-                    <p>Folie-Méricourt</p>
-                    <span><i class="far fa-heart"></i></span>
-                </figcaption>
-            </figure>
+            <a href="">
+                <figure>
+                    <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
+                    <div class="restaurant__figcaption--flex">
+                        <figcaption>
+                            <h4>La palette du goût</h4>
+                            <p>Ménilmontant</p>
+                        </figcaption>
+                            <span><button><i class="far fa-heart"></i></button></span>
+                    </div>
+                </figure>
+            </a>
+            <a href="">
+                <figure>
+                    <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="">
+                    <div class="restaurant__figcaption--flex">
+                        <figcaption>
+                            <h4>La note enchantée</h4>
+                            <p>Charonne</p>
+                        </figcaption>
+                            <span><button><i class="far fa-heart"></i></button>
+                            </span>
+                    </div>
+                </figure>
+            </a>
+            <a href="">
+                <figure>
+                    <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
+                    <div class="restaurant__figcaption--flex">
+                        <figcaption>
+                            <h4>À la française</h4>
+                            <p>Cité Rouge</p>
+                        </figcaption>
+                        <span><button><i class="far fa-heart"></i></button></span>
+                    </div>
+                </figure>
+            </a>
+            <a href="">
+                <figure>
+                    <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
+                    <div class="restaurant__figcaption--flex">
+                        <figcaption>
+                            <h4>Le délice des sens</h4>
+                            <p>Folie-Méricourt</p>
+                        </figcaption>
+                        <span><button><i class="far fa-heart"></i></button></span>
+                    </div>
+                </figure>
+            </a>
         </div>
     </section>
-    <footer>
-        <h4>ohmyfood</h4>
-        <div id="footer__links">
-            <p><span><i class="fas fa-utensils"></i></span>Proposer un restaurant
-            </p>
-            <p><span><i class="fas fa-hands-helping"></i></span>Proposer un restaurant</p>
-            <p>Mentions légales</p>
-            <p>Contact</p>
-        </div>
-    </footer>
+    <object data="snippet-footer.html"></object>
 </body>
 </html>

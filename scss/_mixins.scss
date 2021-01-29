@@ -1,0 +1,12 @@
+@mixin positionner($x: 50%, $y: 50%){
+    position:absolute;
+    left: $x;
+    top: $y;
+    transform: translate(-$x, -$y);
+    // include positionner()
+}
+
+@mixin fontStuff($couleur, $valeur){
+ #{$couleur}: $valeur;
+}
+
