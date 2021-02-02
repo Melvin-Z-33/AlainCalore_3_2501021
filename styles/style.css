@@ -21,10 +21,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  overflow: hidden;
-}
-
 * {
   margin: 0px;
   padding: 0px;
@@ -32,8 +28,19 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  position: relative;
+}
+
 a {
   text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: black;
+}
+a:active {
+  color: black;
 }
 
 li {
@@ -48,6 +55,10 @@ h1, h2, h5 {
 h2 {
   font-size: 1.4rem;
   color: black;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 /*************     HEADER SECTION ***********/
@@ -136,9 +147,10 @@ header h1 {
   content: counter(li);
   color: white;
   display: inline-block;
-  width: 1em;
+  width: 18px;
+  height: 20px;
   margin-left: -1em;
-  border-radius: 30px;
+  border-radius: 10px;
   border: 1px solid #9356DC;
   background-color: #9356DC;
   text-align: center;
@@ -167,7 +179,7 @@ header h1 {
 }
 
 #restaurant_flex a {
-  margin: 40px;
+  margin: 16px;
   width: 90%;
 }
 #restaurant_flex figure {
@@ -178,6 +190,16 @@ header h1 {
   height: 22%;
   border-radius: 30px;
   align-items: center;
+  position: relative;
+}
+#restaurant_flex .restaurant__nouveaute {
+  background-color: #99E2D0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 74px;
+  text-align: center;
+  padding: 5px;
 }
 #restaurant_flex img {
   width: 100%;
@@ -190,26 +212,39 @@ header h1 {
   background-color: white;
   border-radius: 0px 0px 30px 30px;
 }
+#restaurant_flex .restaurant__paragraphe {
+  font-weight: 300;
+}
 
 .restaurant__figcaption--flex {
   width: 100%;
+  height: 56px;
+  padding: 0 14px;
   justify-content: space-between;
   align-items: center;
   display: flex;
   background-color: white;
   border-radius: 0px 0px 20px 20px;
 }
+.restaurant__figcaption--flex span {
+  margin-right: 25px;
+}
+.restaurant__figcaption--flex .fa-heart {
+  font-size: large;
+}
 .restaurant__figcaption--flex button {
-  color: red;
+  background-color: white;
+  border: none;
+}
+.restaurant__figcaption--flex button:hover {
+  cursor: grab;
+  background-color: red;
 }
 
 /********** footer section ***************/
 #snippet-footer {
-  overflow: hidden;
   width: 100%;
-  height: auto;
-  position: absolute;
-  bottom: 0;
+  height: 187px;
 }
 
 footer {
