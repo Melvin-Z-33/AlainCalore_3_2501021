@@ -2,13 +2,13 @@ header h1 {
   text-align: center;
 }
 
-#fonctionnement li, #reservation_localisation {
+#fonctionnement li, #reservation_localisation, #header-flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#fonctionnement ol, #reservation_texte {
+#restaurant_flex, #fonctionnement ol, #reservation_texte {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,6 @@ header h1 {
 html {
   font-size: 15px;
   scroll-behavior: smooth;
-  overflow-y: hidden;
 }
 
 * {
@@ -29,23 +28,62 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
-a {
-  text-decoration: none;
+body {
+  position: relative;
 }
 
-h1 {
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: black;
+}
+a:active {
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+h1, h2, h5 {
   font-family: "Shrikhand", cursive;
   font-size: 1.95rem;
 }
 
-h2, h3 {
+h2 {
   font-size: 1.4rem;
-  font-family: "Roboto", sans-serif;
+  color: black;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 /*************     HEADER SECTION ***********/
+#snippet-header {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+}
+
 header h1 {
   margin: 15px 0 4px;
+}
+
+#header-flex {
+  padding-top: 20px;
+  width: 100%;
+}
+#header-flex img {
+  margin-left: 2rem;
+  height: 2rem;
+}
+#header-flex .fas {
+  font-size: larger;
 }
 
 /*************  RESERVATION SECTION *******/
@@ -74,7 +112,7 @@ header h1 {
 #reservation_texte p {
   color: grey;
 }
-#reservation_texte a {
+#reservation_texte .btn-principal {
   width: 200px;
   height: 48px;
   margin: 8% 0;
@@ -97,7 +135,7 @@ header h1 {
 #fonctionnement li {
   counter-increment: li;
   position: relative;
-  margin: 5% 0;
+  margin: 4% 0;
   width: 90%;
   height: 55px;
   background-color: #f2f2f2;
@@ -109,9 +147,10 @@ header h1 {
   content: counter(li);
   color: white;
   display: inline-block;
-  width: 1em;
+  width: 18px;
+  height: 20px;
   margin-left: -1em;
-  border-radius: 30px;
+  border-radius: 10px;
   border: 1px solid #9356DC;
   background-color: #9356DC;
   text-align: center;
@@ -127,9 +166,148 @@ header h1 {
   color: #9356DC;
 }
 
+/********** restaurants section ***********/
+#restaurant {
+  background-color: #f2f2f2;
+  margin: 9% 0;
+  padding-top: 12%;
+  width: 100vw;
+}
+#restaurant h3 {
+  margin: 10px 0 20px;
+  padding-left: 5%;
+}
+
+#restaurant_flex a {
+  margin: 16px;
+  width: 90%;
+}
+#restaurant_flex figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  width: 100%;
+  height: 22%;
+  border-radius: 30px;
+  align-items: center;
+  position: relative;
+}
+#restaurant_flex .restaurant__nouveaute {
+  background-color: #99E2D0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 74px;
+  text-align: center;
+  padding: 5px;
+}
+#restaurant_flex img {
+  width: 100%;
+  height: 159px;
+  border-radius: 30px 30px 0 0;
+  object-fit: cover;
+  object-position: bottom;
+}
+#restaurant_flex figcaption {
+  background-color: white;
+  border-radius: 0px 0px 30px 30px;
+}
+#restaurant_flex .restaurant__paragraphe {
+  font-weight: 300;
+}
+
+.restaurant__figcaption--flex {
+  width: 100%;
+  height: 56px;
+  padding: 0 14px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  background-color: white;
+  border-radius: 0px 0px 20px 20px;
+}
+.restaurant__figcaption--flex span {
+  margin-right: 25px;
+}
+.restaurant__figcaption--flex .fa-heart {
+  font-size: large;
+}
+.restaurant__figcaption--flex button {
+  background-color: white;
+  border: none;
+}
+.restaurant__figcaption--flex button:hover {
+  cursor: grab;
+  background-color: red;
+}
+
+/********** footer section ***************/
+#snippet-footer {
+  width: 100%;
+  height: 187px;
+}
+
 footer {
   background-color: black;
   color: white;
+  padding: 5%;
+}
+footer h4 {
+  margin-top: 41px;
+  font-size: 1.3rem;
+}
+footer #footer__links {
+  margin: 5% 0;
+}
+footer p {
+  margin-top: 2%;
+  font-size: 0.7rem;
+}
+footer span {
+  margin-right: 5px;
+}
+footer a {
+  color: white;
+}
+
+/******* MODELE PAGE **********/
+#header__image img {
+  margin-top: 55px;
+  width: 100%;
+  height: 200px;
+}
+
+main {
+  border: 1px solid #f2f2f2;
+  border-radius: 0px 0px 20px 20px;
+  background-color: #f2f2f2;
+  width: 100%;
+  position: absolute;
+  bottom: 54px;
+  border-radius: 40px 40px 0px 0px;
+  padding: 30px 30px 0;
+}
+main .menu__link {
+  background-color: white;
+  margin-top: 25px;
+  border-radius: 14px;
+}
+
+#heading__main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-principal {
+  width: 200px;
+  height: 48px;
+  margin: 8% 0;
+  color: white;
+  border-radius: 30px;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  display: grid;
+  place-items: center;
+  margin: 50px auto;
 }
 
 /*# sourceMappingURL=style.css.map */
