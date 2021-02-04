@@ -17,6 +17,7 @@ html {
 }
 body{
   position:relative;
+  margin:0;
 }
 
 a {
@@ -51,9 +52,9 @@ h3{
 
 /*************     HEADER SECTION ***********/
 #snippet-header {
-  overflow: hidden;
+  
   width: 100%;
-  height: auto;
+  height: 300px;
   position:absolute;
   top:0;
 
@@ -72,12 +73,16 @@ header {
   padding-top:20px;
   
   width:100%;
+  a{
+    padding-left: 6%;
+  }
   img{
-    margin-left: 2rem;
     height: 2rem;
+    margin: 0 auto;
+    padding-right: 6%;
   }
   .fas{
-    font-size:larger;
+    font-size:x-large;
     // margin-left: -272%;
   }
 
@@ -176,9 +181,10 @@ header {
 /********** restaurants section ***********/
 #restaurant {
   background-color: $color-background01;
-  margin: 9% 0;
+  margin:  0;
   padding-top: 12%;
   width: 100vw;
+  padding-bottom: 200px;
   h3 {
     margin: 10px 0 20px;
     padding-left: 5%;
@@ -256,6 +262,8 @@ header {
 #snippet-footer {
   width: 100%;
   height: 187px;
+  position:absolute;
+  bottom:0;
 
 }
 
@@ -294,21 +302,22 @@ footer {
 
 #header__image{
   img{
-  margin-top:55px;
+  margin-top:65px;
   width:100%;
   height:200px;
 }
 }
 
 main{
+  position: relative;
  border:1px solid $color-background01;
 border-radius:0px 0px 20px 20px;
   background-color:$color-background01 ;
   width:100%;
-  position: absolute;
+  
 bottom: 54px;
 border-radius: 40px 40px  0px 0px;
-padding: 30px 30px 0;
+padding: 0 30px 127px 30px;
 
 .menu__link{
   background-color: white;
