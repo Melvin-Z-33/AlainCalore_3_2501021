@@ -248,12 +248,19 @@ header {
     .fa-heart{
       font-size: large;
     }
+    i:nth-child(2){
+      color:$color-primaire;
+      position:absolute;
+      left:0px;
+      display:none;
+    }
   button {
     background-color: white;
+    position:relative;
   border: none;
-    &:hover{
-      cursor: grab;
-      background-color:red;
+    &:hover i:nth-child(2){
+      display:block;
+
     }
   }
 }
@@ -314,17 +321,27 @@ main{
 border-radius:0px 0px 20px 20px;
   background-color:$color-background01 ;
   width:100%;
-  
 bottom: 54px;
 border-radius: 40px 40px  0px 0px;
-padding: 0 30px 127px 30px;
+padding: 35px 30px 127px 30px;
 
 .menu__link{
   background-color: white;
   margin-top: 25px;
   border-radius: 14px;
+  height:65px;
+  width: 328px;
+  display: grid;
+grid-template-columns: 80% 20%;
+grid-template-rows: 50% 50%;
   }
-  
+  .menu__paragraph{
+    grid-column-start: 1;
+    font-weight: 300;
+  }
+  .menu__prix{
+    justify-self: end;
+  }
 }
 
 
@@ -333,9 +350,20 @@ padding: 0 30px 127px 30px;
 #heading__main{
   display: flex;
   justify-content: space-between;
-  
+
 }
 
+.menu{
+  margin-top:42px;
+  h3{
+    font-weight:300;
+    text-transform: uppercase;
+    border-bottom: 2px solid $color-tertiaire;
+    width: 55px;
+    height:31px;
+  }
+
+}
 
 .btn-principal {
 
@@ -349,4 +377,6 @@ padding: 0 30px 127px 30px;
   place-items: center;
   margin: 50px auto;
 }
+
+
 

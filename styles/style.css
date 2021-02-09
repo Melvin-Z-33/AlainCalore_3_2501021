@@ -237,13 +237,19 @@ header h1 {
 .restaurant__figcaption--flex .fa-heart {
   font-size: large;
 }
+.restaurant__figcaption--flex i:nth-child(2) {
+  color: #9356DC;
+  position: absolute;
+  left: 0px;
+  display: none;
+}
 .restaurant__figcaption--flex button {
   background-color: white;
+  position: relative;
   border: none;
 }
-.restaurant__figcaption--flex button:hover {
-  cursor: grab;
-  background-color: red;
+.restaurant__figcaption--flex button:hover i:nth-child(2) {
+  display: block;
 }
 
 /********** footer section ***************/
@@ -292,17 +298,40 @@ main {
   width: 100%;
   bottom: 54px;
   border-radius: 40px 40px 0px 0px;
-  padding: 0 30px 127px 30px;
+  padding: 35px 30px 127px 30px;
 }
 main .menu__link {
   background-color: white;
   margin-top: 25px;
   border-radius: 14px;
+  height: 65px;
+  width: 328px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 50% 50%;
+}
+main .menu__paragraph {
+  grid-column-start: 1;
+  font-weight: 300;
+}
+main .menu__prix {
+  justify-self: end;
 }
 
 #heading__main {
   display: flex;
   justify-content: space-between;
+}
+
+.menu {
+  margin-top: 42px;
+}
+.menu h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+  border-bottom: 2px solid #99E2D0;
+  width: 55px;
+  height: 31px;
 }
 
 .btn-principal {
