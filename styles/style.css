@@ -126,6 +126,9 @@ header h1 {
   display: grid;
   place-items: center;
 }
+#reservation_texte .btn-principal:hover {
+  background: linear-gradient(#556eae, #0071af);
+}
 
 /********** Fonctionnement section ***********/
 #fonctionnement h3 {
