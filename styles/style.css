@@ -116,19 +116,6 @@ header h1 {
 #reservation_texte p {
   color: grey;
 }
-#reservation_texte .btn-principal {
-  width: 200px;
-  height: 48px;
-  margin: 8% 0;
-  color: white;
-  border-radius: 30px;
-  background-image: linear-gradient(#FF79DA, #9356DC);
-  display: grid;
-  place-items: center;
-}
-#reservation_texte .btn-principal:hover {
-  background: linear-gradient(#556eae, #0071af);
-}
 
 /********** Fonctionnement section ***********/
 #fonctionnement h3 {
@@ -244,7 +231,9 @@ header h1 {
   color: #9356DC;
   position: absolute;
   left: 0px;
-  display: none;
+  bottom: 1px;
+  opacity: 0;
+  transition-delay: 300ms;
 }
 .restaurant__figcaption--flex button {
   background-color: white;
@@ -252,7 +241,28 @@ header h1 {
   border: none;
 }
 .restaurant__figcaption--flex button:hover i:nth-child(2) {
-  display: block;
+  animation: filling 1000ms;
+}
+@keyframes filling {
+  0% {
+    transform: scaleX(0);
+    opacity: 0.1;
+  }
+  17% {
+    transform: scaleX(0.18);
+  }
+  24% {
+    transform: scaleX(0.4);
+  }
+  46% {
+    transform: scaleX(0.81);
+  }
+  85%, 100% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 /********** footer section ***************/
@@ -337,7 +347,7 @@ main .menu__prix {
   height: 31px;
 }
 
-.btn-principal {
+#reservation #reservation_texte .btn-principal {
   width: 200px;
   height: 48px;
   margin: 8% 0;
@@ -347,6 +357,13 @@ main .menu__prix {
   display: grid;
   place-items: center;
   margin: 50px auto;
+  transition-delay: 100ms;
+  transition-property: all;
+  box-shadow: 5px 3px 5px gray;
+}
+#reservation #reservation_texte .btn-principal:hover {
+  background-image: linear-gradient(#ff98e2, #a36fe1);
+  box-shadow: 10px 5px 5px gray;
 }
 
 /*# sourceMappingURL=style.css.map */
