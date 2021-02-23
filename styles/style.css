@@ -351,6 +351,10 @@ main .menu__link:nth-child(3) {
     opacity: 1;
   }
 }
+main .menu__link h4, main .menu__link p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 main .menu__paragraph {
   grid-column-start: 1;
   font-weight: 300;
@@ -411,7 +415,7 @@ body::after {
   animation-fill-mode: forwards;
   display: block;
   opacity: 1;
-  background-color: pink;
+  background-color: white;
 }
 @keyframes apparition {
   0% {

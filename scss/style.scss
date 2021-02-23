@@ -390,6 +390,8 @@ display: block;
 transform: translateY(50px);
 opacity: 0;
 
+
+
   &:nth-child(2){
     -webkit-animation-delay: 300ms;
     animation-delay: 300ms;
@@ -412,6 +414,13 @@ opacity: 0;
       transform: translateY(0px);
       opacity: 1;
   }
+
+  }
+
+  h4, p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    
 
   }
 
@@ -504,7 +513,7 @@ animation-fill-mode: forwards;
 
 display: block;
 opacity: 1;
-background-color: pink;
+background-color: white;
 
 @keyframes apparition {
   0% {
