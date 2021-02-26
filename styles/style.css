@@ -311,35 +311,101 @@ main {
   width: 100%;
   bottom: 54px;
   border-radius: 40px 40px 0px 0px;
-  padding: 35px 30px 127px 30px;
+  padding: 35px 10px 127px 10px;
 }
-main .menu__link {
+main #heading__main {
+  display: flex;
+  justify-content: space-between;
+}
+main h2 {
+  font-size: 1.8em;
+}
+main .button__heart {
+  border: none;
+}
+main .fa-heart {
+  size: 25px;
+}
+
+.menu {
+  margin-top: 30px;
+}
+.menu h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+  border-bottom: 2px solid #99E2D0;
+  width: 55px;
+  height: 31px;
+  font-size: 1.2rem;
+}
+.menu .menu__link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 65px;
   background-color: white;
   margin-top: 25px;
   border-radius: 14px;
-  height: 65px;
-  width: 328px;
-  display: grid;
-  grid-template-columns: 80% 20%;
-  grid-template-rows: 50% 50%;
   -webkit-animation-name: taglineEmerge;
   animation-name: taglineEmerge;
   -webkit-animation-duration: 1400ms;
   animation-duration: 1400ms;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  display: block;
   transform: translateY(50px);
   opacity: 0;
 }
-main .menu__link:nth-child(2) {
+.menu .menu__link:hover span {
+  transform: scaleX(1);
+  width: 20%;
+}
+.menu .menu__link:nth-child(2) {
   -webkit-animation-delay: 300ms;
   animation-delay: 300ms;
 }
-main .menu__link:nth-child(3) {
+.menu .menu__link:nth-child(3) {
   -webkit-animation-delay: 600ms;
   animation-delay: 600ms;
 }
+.menu .block-1 {
+  width: 100%;
+  padding: 0 14px;
+}
+.menu h4 {
+  margin-top: 12px;
+  margin-bottom: 5px;
+}
+.menu .block-1__bis {
+  display: flex;
+  justify-content: space-between;
+}
+.menu .menu__paragraph {
+  font-weight: 300;
+}
+.menu .menu__prix {
+  justify-self: end;
+}
+.menu span {
+  width: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  transform: scaleX(0);
+  transition: all 0.5s;
+  transform-origin: right 100%;
+  border-radius: 0 15px 15px 0;
+}
+.menu .fa-check {
+  border: 1px solid white;
+  border-radius: 50%;
+  margin: 50px;
+  background-color: #fff;
+  color: green;
+  font-size: 12px;
+  padding: 6px;
+}
+
 @keyframes taglineEmerge {
   0% {
     transform: translateY(50px);
@@ -351,35 +417,12 @@ main .menu__link:nth-child(3) {
     opacity: 1;
   }
 }
-main .menu__link h4, main .menu__link p {
+h4, p {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-main .menu__paragraph {
-  grid-column-start: 1;
-  font-weight: 300;
-}
-main .menu__prix {
-  justify-self: end;
-}
 
-#heading__main {
-  display: flex;
-  justify-content: space-between;
-}
-
-.menu {
-  margin-top: 42px;
-}
-.menu h3 {
-  font-weight: 300;
-  text-transform: uppercase;
-  border-bottom: 2px solid #99E2D0;
-  width: 55px;
-  height: 31px;
-}
-
-#reservation #reservation_texte .btn-principal {
+.btn-principal {
   width: 200px;
   height: 48px;
   margin: 8% 0;
@@ -393,39 +436,43 @@ main .menu__prix {
   transition-property: all;
   box-shadow: 5px 3px 5px gray;
 }
-#reservation #reservation_texte .btn-principal:hover {
+.btn-principal:hover {
   background-image: linear-gradient(#ff98e2, #a36fe1);
   box-shadow: 10px 5px 5px gray;
 }
 
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  pointer-events: none;
-  -webkit-animation-name: apparition;
-  animation-name: apparition;
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  display: block;
-  opacity: 1;
-  background-color: white;
-}
+/*
+body::after{
+  content:"";
+  position:fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+z-index: 1;
+pointer-events:none;
+-webkit-animation-name: apparition;
+animation-name: apparition;
+-webkit-animation-duration: 3s;
+animation-duration: 3s;
+-webkit-animation-fill-mode:both ;
+animation-fill-mode: both;
+display: block;
+opacity: 1;
+background-color: white;
+
 @keyframes apparition {
   0% {
-    opacity: 1;
+      opacity: 1;
   }
   100% {
-    opacity: 0;
+      opacity: 0;
+  }
+
   }
 }
 
+*/
 .lds-spinner {
   color: official;
   display: block;
@@ -445,6 +492,18 @@ body::after {
 }
 @keyframes apparition {
   0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  90% {
     opacity: 1;
   }
   100% {
