@@ -14,12 +14,12 @@ html {
   padding: 0px;
   box-sizing: border-box;
   font-family: $font-family-text;
-  
+
 }
 body{
   position:relative;
   margin:0;
-  
+  overflow-x: hidden;
 }
 
 a {
@@ -120,19 +120,6 @@ header {
   p {
     color: grey;
   }
-  
-  // .btn-principal {
-  //   width: 200px;
-  //   height: 48px;
-  //   margin: 8% 0;
-  //   color: $color-text02;
-  //   border-radius: 30px;
-  //   background-image: linear-gradient($color-secondaire, $color-primaire);
-  //   display: grid;
-  //   place-items: center;
-   
-  // }
-
 }
 
 
@@ -176,7 +163,7 @@ header {
   }
   span {
     position: absolute;
-    left: 40px;
+    left: 26px;
     color: grey;
   }
   .fa-store {
@@ -192,7 +179,7 @@ header {
   width: 100vw;
   padding-bottom: 200px;
   h3 {
-    margin: 10px 0 20px;
+  margin-top: 10px;
     padding-left: 5%;
   }
 }
@@ -204,19 +191,16 @@ header {
     width: 90%;
   }
   figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: normal;
+    @extend %flex-center-column;
+    position:relative;
     width: 100%;
     height: 22%;
     border-radius: 30px;
-    align-items: center;
-    position:relative;
   }
   .restaurant__nouveaute{
-   background-color:$color-tertiaire;
-   position:absolute;
-   top: 20px;
+    background-color:$color-tertiaire;
+    position:absolute;
+    top: 20px;
     right: 20px;
     width: 74px;
     text-align: center;
@@ -239,6 +223,8 @@ header {
   }
  
 }
+
+
 .restaurant__figcaption--flex {
   width: 100%;
   height:56px;
@@ -291,16 +277,13 @@ header {
       46% {
           transform: scaleX(.81);
       }
-      85%,100% {
+      85% {
           opacity: 1;
       }
       100% {
           transform: scaleX(1);
       }
   }
-
-
-
   }
 }
 
@@ -309,12 +292,15 @@ header {
 
 /********** footer section ***************/
 #snippet-footer {
-  width: 100%;
+  width: 104%;
   height: 187px;
   position:absolute;
   bottom:0;
+    a:hover{
+      color: $color-text02;
+    }
+  }
 
-}
 
 
 footer {
@@ -338,6 +324,9 @@ footer {
   }
   a {
     color: $color-text02;
+    &:hover{
+      color: $color-text02;
+    }
   }
 }
 
@@ -362,13 +351,13 @@ footer {
 
 main{
   position: relative;
- border:1px solid $color-background01;
-border-radius:0px 0px 20px 20px;
+  border:1px solid $color-background01;
+  border-radius:0px 0px 20px 20px;
   background-color:$color-background01 ;
   width:100%;
-bottom: 54px;
-border-radius: 40px 40px  0px 0px;
-padding: 35px 10px 127px 10px;
+  bottom: 54px;
+  border-radius: 40px 40px  0px 0px;
+  padding: 35px 10px 127px 10px;
 
   #heading__main{
     display: flex;
@@ -380,6 +369,8 @@ padding: 35px 10px 127px 10px;
   }
   .button__heart{
     border:none;
+    margin-right:5%;
+    font-size:1.2rem;
   }
 
   .fa-heart{
@@ -405,8 +396,7 @@ padding: 35px 10px 127px 10px;
       height:65px;
       background-color: white;
       margin-top: 25px;
-      border-radius: 14px;
-      
+      border-radius: 14px; 
       -webkit-animation-name: taglineEmerge;
       animation-name: taglineEmerge;
       -webkit-animation-duration: 1400ms;
@@ -452,7 +442,7 @@ padding: 35px 10px 127px 10px;
     display: flex;
     justify-content: center;
     align-items:center;
-    background-color: green;
+    background-color:$color-tertiaire;
     transform: scaleX(0);
     transition: all .5s;
     transform-origin: right 100% ;
@@ -461,10 +451,10 @@ padding: 35px 10px 127px 10px;
   .fa-check{
     border: 1px solid white;
     border-radius:50%;
-      margin:50px;
+    margin:50px;
     background-color: #fff;
-    color:green;
-     font-size:12px;
+    color:$color-tertiaire;
+    font-size:12px;
     padding: 6px;
   }
 }
@@ -509,10 +499,8 @@ padding: 35px 10px 127px 10px;
   box-shadow: 5px 3px 5px gray;
 
 &:hover{
-  
   background-image: linear-gradient(lighten($color-secondaire, 6), lighten($color-primaire, 6));
   box-shadow: 10px 5px 5px gray;
-
 }
 
 }
@@ -524,9 +512,9 @@ padding: 35px 10px 127px 10px;
 
 
 // animation intro ecran blan
-/*
-body::after{
-  content:"";
+
+.white-background-animation::after{
+  content:" ";
   position:fixed;
 top:0;
 left:0;
@@ -555,7 +543,7 @@ background-color: white;
   }
 }
 
-*/
+
 
 // animation spinner debut
 
@@ -568,13 +556,13 @@ background-color: white;
   top: 35%;
   left:50%;
   transform:translate(-50%, -50%);
-  z-index:2;
+  z-index:2;  
   -webkit-animation-name: apparition;
 animation-name: apparition;
 -webkit-animation-duration: 3s;
 animation-duration: 3s;
 -webkit-animation-fill-mode: forwards;
-animation-fill-mode: forwards;
+animation-fill-mode: forwards; 
 @keyframes apparition {
   0% {
       opacity: 1;

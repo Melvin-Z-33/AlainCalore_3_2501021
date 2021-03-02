@@ -8,7 +8,7 @@ header h1 {
   align-items: center;
 }
 
-#restaurant_flex, #fonctionnement ol, #reservation_texte {
+#restaurant_flex figure, #restaurant_flex, #fonctionnement ol, #reservation_texte {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,6 +31,7 @@ html {
 body {
   position: relative;
   margin: 0;
+  overflow-x: hidden;
 }
 
 a {
@@ -153,7 +154,7 @@ header h1 {
 }
 #fonctionnement span {
   position: absolute;
-  left: 40px;
+  left: 26px;
   color: grey;
 }
 #fonctionnement .fa-store {
@@ -169,7 +170,7 @@ header h1 {
   padding-bottom: 200px;
 }
 #restaurant h3 {
-  margin: 10px 0 20px;
+  margin-top: 10px;
   padding-left: 5%;
 }
 
@@ -178,14 +179,10 @@ header h1 {
   width: 90%;
 }
 #restaurant_flex figure {
-  display: flex;
-  flex-direction: column;
-  justify-content: normal;
+  position: relative;
   width: 100%;
   height: 22%;
   border-radius: 30px;
-  align-items: center;
-  position: relative;
 }
 #restaurant_flex .restaurant__nouveaute {
   background-color: #99E2D0;
@@ -257,7 +254,7 @@ header h1 {
   46% {
     transform: scaleX(0.81);
   }
-  85%, 100% {
+  85% {
     opacity: 1;
   }
   100% {
@@ -267,10 +264,13 @@ header h1 {
 
 /********** footer section ***************/
 #snippet-footer {
-  width: 100%;
+  width: 104%;
   height: 187px;
   position: absolute;
   bottom: 0;
+}
+#snippet-footer a:hover {
+  color: white;
 }
 
 footer {
@@ -293,6 +293,9 @@ footer span {
   margin-right: 5px;
 }
 footer a {
+  color: white;
+}
+footer a:hover {
   color: white;
 }
 
@@ -322,6 +325,8 @@ main h2 {
 }
 main .button__heart {
   border: none;
+  margin-right: 5%;
+  font-size: 1.2rem;
 }
 main .fa-heart {
   size: 25px;
@@ -390,7 +395,7 @@ main .fa-heart {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: green;
+  background-color: #99E2D0;
   transform: scaleX(0);
   transition: all 0.5s;
   transform-origin: right 100%;
@@ -401,7 +406,7 @@ main .fa-heart {
   border-radius: 50%;
   margin: 50px;
   background-color: #fff;
-  color: green;
+  color: #99E2D0;
   font-size: 12px;
   padding: 6px;
 }
@@ -441,38 +446,34 @@ h4, p {
   box-shadow: 10px 5px 5px gray;
 }
 
-/*
-body::after{
-  content:"";
-  position:fixed;
-top:0;
-left:0;
-right:0;
-bottom:0;
-z-index: 1;
-pointer-events:none;
--webkit-animation-name: apparition;
-animation-name: apparition;
--webkit-animation-duration: 3s;
-animation-duration: 3s;
--webkit-animation-fill-mode:both ;
-animation-fill-mode: both;
-display: block;
-opacity: 1;
-background-color: white;
-
+.white-background-animation::after {
+  content: " ";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-animation-name: apparition;
+  animation-name: apparition;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  display: block;
+  opacity: 1;
+  background-color: white;
+}
 @keyframes apparition {
   0% {
-      opacity: 1;
+    opacity: 1;
   }
   100% {
-      opacity: 0;
-  }
-
+    opacity: 0;
   }
 }
 
-*/
 .lds-spinner {
   color: official;
   display: block;
