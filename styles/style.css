@@ -2,7 +2,7 @@ header h1 {
   text-align: center;
 }
 
-#fonctionnement li, #reservation_localisation, #header-flex {
+#fonctionnement li::before, #fonctionnement li, #reservation_localisation, #header-flex {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,6 +62,11 @@ h2 {
 h3 {
   font-size: 1.5rem;
 }
+@media (max-width: 768px) {
+  h3 {
+    font-size: 2rem;
+  }
+}
 
 /*************     HEADER SECTION ***********/
 #snippet-header {
@@ -116,6 +121,10 @@ header h1 {
 }
 #reservation_texte p {
   color: grey;
+  margin-bottom: 20px;
+}
+#reservation_texte a {
+  margin-bottom: 33px;
 }
 
 /********** Fonctionnement section ***********/
@@ -126,6 +135,12 @@ header h1 {
 #fonctionnement ol {
   list-style: none;
   counter-reset: li;
+}
+@media (min-width: 799px) {
+  #fonctionnement ol {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 #fonctionnement li {
   counter-increment: li;
@@ -138,10 +153,18 @@ header h1 {
   border-radius: 17px;
   box-shadow: 2px 5px 5px #e5e5e5;
 }
+@media (min-width: 799px) {
+  #fonctionnement li {
+    width: 18rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 4%;
+    align-content: center;
+  }
+}
 #fonctionnement li::before {
   content: counter(li);
   color: white;
-  display: inline-block;
   width: 18px;
   height: 20px;
   margin-left: -1em;
@@ -161,10 +184,14 @@ header h1 {
   color: #9356DC;
 }
 
+.fa-bars {
+  margin-left: 7px;
+}
+
 /********** restaurants section ***********/
 #restaurant {
   background-color: #f2f2f2;
-  margin: 0;
+  margin-top: 50px;
   padding-top: 12%;
   width: 100vw;
   padding-bottom: 200px;
@@ -174,6 +201,12 @@ header h1 {
   padding-left: 5%;
 }
 
+@media (min-width: 799px) {
+  #restaurant_flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 #restaurant_flex a {
   margin: 16px;
   width: 90%;
@@ -262,6 +295,76 @@ header h1 {
   }
 }
 
+.test123 {
+  width: 337px;
+  position: relative;
+}
+@media (min-width: 799px) {
+  .test123 {
+    width: 339spx;
+    position: relative;
+    margin-right: 46px;
+  }
+}
+.test123 .restaurant__figcaption--flex {
+  width: 100%;
+  height: 56px;
+  padding: 0 14px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  background-color: white;
+  border-radius: 0px 0px 20px 20px;
+}
+.test123 span {
+  position: absolute;
+  right: 1px;
+  bottom: 27px;
+}
+
+.fa-heart {
+  font-size: large;
+}
+
+i:nth-child(2) {
+  color: #9356DC;
+  position: absolute;
+  left: 0px;
+  bottom: 1px;
+  opacity: 0;
+  transition-delay: 300ms;
+}
+
+button {
+  background-color: white;
+  position: relative;
+  border: none;
+}
+button:hover i:nth-child(2) {
+  animation: filling 1000ms;
+}
+@keyframes filling {
+  0% {
+    transform: scaleX(0);
+    opacity: 0.1;
+  }
+  17% {
+    transform: scaleX(0.18);
+  }
+  24% {
+    transform: scaleX(0.4);
+  }
+  46% {
+    transform: scaleX(0.81);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
 /********** footer section ***************/
 #snippet-footer {
   width: 104%;
@@ -288,6 +391,9 @@ footer #footer__links {
 footer p {
   margin-top: 2%;
   font-size: 0.7rem;
+}
+footer p:nth-child(3) {
+  margin: 2px;
 }
 footer span {
   margin-right: 5px;
@@ -327,9 +433,11 @@ main .button__heart {
   border: none;
   margin-right: 5%;
   font-size: 1.2rem;
+  background-color: #f2f2f2;
 }
 main .fa-heart {
   size: 25px;
+  background-color: #f2f2f2;
 }
 
 .menu {
@@ -386,6 +494,9 @@ main .fa-heart {
 }
 .menu .menu__paragraph {
   font-weight: 300;
+  width: 251px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .menu .menu__prix {
   justify-self: end;
@@ -595,6 +706,49 @@ h4, p {
   }
   100% {
     opacity: 0;
+  }
+}
+.test123 span {
+  margin-right: 25px;
+}
+.test123 .fa-heart {
+  font-size: large;
+}
+.test123 i:nth-child(2) {
+  color: #9356DC;
+  position: absolute;
+  left: 0px;
+  bottom: 1px;
+  opacity: 0;
+  transition-delay: 300ms;
+}
+.test123 button {
+  background-color: white;
+  position: relative;
+  border: none;
+}
+.test123 button:hover i:nth-child(2) {
+  animation: filling 1000ms;
+}
+@keyframes filling {
+  0% {
+    transform: scaleX(0);
+    opacity: 0.1;
+  }
+  17% {
+    transform: scaleX(0.18);
+  }
+  24% {
+    transform: scaleX(0.4);
+  }
+  46% {
+    transform: scaleX(0.81);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
   }
 }
 
