@@ -301,7 +301,7 @@ header h1 {
 }
 @media (min-width: 799px) {
   .test123 {
-    width: 339spx;
+    width: 339px;
     position: relative;
     margin-right: 46px;
   }
@@ -379,7 +379,8 @@ button:hover i:nth-child(2) {
 footer {
   background-color: black;
   color: white;
-  padding: 5%;
+  padding: 20px;
+  height: 100vh;
 }
 footer h4 {
   margin-top: 41px;
@@ -411,6 +412,11 @@ footer a:hover {
   width: 100%;
   height: 200px;
 }
+@media (min-width: 500px) {
+  #header__image img {
+    object-fit: cover;
+  }
+}
 
 main {
   position: relative;
@@ -426,24 +432,43 @@ main #heading__main {
   display: flex;
   justify-content: space-between;
 }
+@media (min-width: 500px) {
+  main #heading__main {
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+  }
+}
 main h2 {
   font-size: 1.8em;
 }
-main .button__heart {
+@media (min-width: 500px) {
+  main h2 {
+    margin: 10px auto;
+  }
+}
+main h2 .button__heart {
   border: none;
   margin-right: 5%;
   font-size: 1.2rem;
   background-color: #f2f2f2;
 }
-main .fa-heart {
+@media (min-width: 500px) {
+  main h2 .button__heart {
+    margin: 10px auto;
+  }
+}
+main h2 .fa-heart {
   size: 25px;
   background-color: #f2f2f2;
 }
-
-.menu {
+main .pageMenu_heart {
+  background-color: #f2f2f2;
+}
+main .menu {
   margin-top: 30px;
 }
-.menu h3 {
+main .menu h3 {
   font-weight: 300;
   text-transform: uppercase;
   border-bottom: 2px solid #99E2D0;
@@ -451,7 +476,24 @@ main .fa-heart {
   height: 31px;
   font-size: 1.2rem;
 }
-.menu .menu__link {
+@media (min-width: 500px) {
+  main .menu h3 {
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1000px) {
+  main .menu h3 {
+    margin: 27px auto;
+  }
+}
+@media (min-width: 1000px) {
+  main .menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+main .menu__link {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -468,40 +510,62 @@ main .fa-heart {
   transform: translateY(50px);
   opacity: 0;
 }
-.menu .menu__link:hover span {
+@media (min-width: 500px) {
+  main .menu__link {
+    width: 447px;
+    margin: 25px auto;
+  }
+}
+@media (min-width: 1000px) {
+  main .menu__link {
+    width: 393px;
+    margin: 23px;
+  }
+}
+main .menu__link:hover span {
   transform: scaleX(1);
   width: 20%;
 }
-.menu .menu__link:nth-child(2) {
+main .menu__link:hover .fa-check {
+  -webkit-animation: rotate 500ms normal linear;
+  animation: rotate 500ms normal linear;
+}
+main .menu__link:nth-child(2) {
   -webkit-animation-delay: 300ms;
   animation-delay: 300ms;
 }
-.menu .menu__link:nth-child(3) {
+main .menu__link:nth-child(3) {
   -webkit-animation-delay: 600ms;
   animation-delay: 600ms;
 }
-.menu .block-1 {
+
+.block-1 {
   width: 100%;
   padding: 0 14px;
 }
-.menu h4 {
+
+h4 {
   margin-top: 12px;
   margin-bottom: 5px;
 }
-.menu .block-1__bis {
+
+.block-1__bis {
   display: flex;
   justify-content: space-between;
 }
-.menu .menu__paragraph {
+
+.menu__paragraph {
   font-weight: 300;
   width: 251px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.menu .menu__prix {
+
+.menu__prix {
   justify-self: end;
 }
-.menu span {
+
+.check {
   width: 0%;
   display: flex;
   justify-content: center;
@@ -512,7 +576,8 @@ main .fa-heart {
   transform-origin: right 100%;
   border-radius: 0 15px 15px 0;
 }
-.menu .fa-check {
+
+.fa-check {
   border: 1px solid white;
   border-radius: 50%;
   margin: 50px;
@@ -749,6 +814,29 @@ h4, p {
   }
   100% {
     transform: scaleX(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  25% {
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(0, 0, 1, -180deg);
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+  75% {
+    -webkit-transform: rotate3d(0, 0, 1, 270deg);
+    transform: rotate3d(0, 0, 1, 270deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
   }
 }
 

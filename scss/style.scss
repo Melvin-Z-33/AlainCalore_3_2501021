@@ -77,7 +77,6 @@ header {
 #header-flex{
   @extend %flex-center;
   padding-top:20px;
-  
   width:100%;
   a{
     padding-left: 6%;
@@ -316,7 +315,7 @@ header {
   width:337px;
   position:relative;
   @media(min-width:799px){
-    width: 339spx;
+    width: 339px;
     position: relative;
     margin-right: 46px;}
 
@@ -413,7 +412,8 @@ header {
 footer {
   background-color: $color-background-footer;
   color: $color-text02;
-  padding: 5%;
+  padding: 20px;
+  height:100vh;
 
   h4 {
     margin-top: 41px;
@@ -453,6 +453,10 @@ footer {
   margin-top:65px;
   width:100%;
   height:200px;
+
+@media(min-width:500px){
+  object-fit:cover ;
+}
 }
 }
 
@@ -472,24 +476,41 @@ main{
   #heading__main{
     display: flex;
     justify-content: space-between;
+
+    @media (min-width:500px) {
+      justify-content: center;
+      flex-direction: column;
+      align-content: center;
+
+    }
   }
 
   h2{
     font-size:1.8em;
+    @media (min-width:500px) {
+      margin:10px auto;
   }
+  
   .button__heart{
     border:none;
     margin-right:5%;
     font-size:1.2rem;
     background-color: $color-background01;
+    @media (min-width:500px) {
+      margin:10px auto;
+
+  }
   }
 
   .fa-heart{
     size: 25px;
     background-color: $color-background01;
   }
+  }
 
-}
+  .pageMenu_heart{
+    background-color: $color-background01;
+  }
 
 .menu{
   margin-top:30px;
@@ -500,7 +521,23 @@ main{
       width: 55px;
       height:31px;
       font-size:1.2rem;
+      @media(min-width:500px){
+        margin:0 auto;
+      }
+      @media(min-width:1000px){
+        margin:27px auto;
+      }
     }
+    }
+
+    .menu__list{
+      @media(min-width:1000px){
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+    }
+      }
     .menu__link{
       display: flex;
       justify-content: space-between;
@@ -517,9 +554,21 @@ main{
       animation-fill-mode: forwards;
       transform: translateY(50px);
       opacity: 0;
+      @media(min-width:500px){
+        width:447px;
+        margin:25px auto;
+       }
+       @media(min-width:1000px){
+        width: 393px;
+        margin: 23px;
+       }
         &:hover span{
           transform: scaleX(1);
           width: 20%;
+        }
+        &:hover  .fa-check{
+          -webkit-animation: rotate 500ms normal linear ;
+          animation: rotate 500ms normal linear ;
         }
         &:nth-child(2){
           -webkit-animation-delay: 300ms;
@@ -529,6 +578,7 @@ main{
           -webkit-animation-delay: 600ms;
           animation-delay: 600ms;
         }
+      }
     }
     .block-1{
       width: 100%;
@@ -552,7 +602,7 @@ main{
       justify-self: end;
     }
  
-  span{
+  .check{
     width: 0%;
     display: flex;
     justify-content: center;
@@ -571,9 +621,8 @@ main{
     color:$color-tertiaire;
     font-size:12px;
     padding: 6px;
+ 
   }
-}
-
 
 
 @keyframes taglineEmerge {
@@ -822,8 +871,34 @@ animation-fill-mode: forwards;
 }
 
 
-$breakpoint: (
-  ipad: 768px,
-  key-02: value-02,
-  key-03: value-03
-);
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  25% {
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(0, 0, 1, -180deg);
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+  75% {
+    -webkit-transform: rotate3d(0, 0, 1, 270deg);
+    transform: rotate3d(0, 0, 1, 270deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+
+
+
+
+// $breakpoint: (
+//   ipad: 768px,
+//   key-02: value-02,
+//   key-03: value-03
+// )
