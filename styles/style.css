@@ -459,7 +459,7 @@ main h2 .button__heart {
   }
 }
 main h2 .fa-heart {
-  size: 25px;
+  font-size: 25px;
   background-color: #f2f2f2;
 }
 main .pageMenu_heart {
@@ -539,6 +539,28 @@ main .menu__link:nth-child(3) {
   animation-delay: 600ms;
 }
 
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  25% {
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(0, 0, 1, -180deg);
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+  75% {
+    -webkit-transform: rotate3d(0, 0, 1, 270deg);
+    transform: rotate3d(0, 0, 1, 270deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
 .block-1 {
   width: 100%;
   padding: 0 14px;
@@ -650,49 +672,19 @@ h4, p {
   }
 }
 
-.lds-spinner {
-  color: official;
-  display: block;
-  position: fixed;
-  width: 80px;
-  height: 80px;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  -webkit-animation-name: apparition;
-  animation-name: apparition;
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
 }
-@keyframes apparition {
+
+@keyframes lds-spinner {
   0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
-  }
-  90% {
     opacity: 1;
   }
   100% {
     opacity: 0;
   }
 }
-
-.lds-spinner div {
-  transform-origin: 40px 40px;
-  animation: lds-spinner 1.2s linear infinite;
-}
-
 .lds-spinner div:after {
   content: " ";
   display: block;
@@ -765,14 +757,43 @@ h4, p {
   animation-delay: 0s;
 }
 
-@keyframes lds-spinner {
+.lds-spinner {
+  display: block;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  -webkit-animation-name: apparition;
+  animation-name: apparition;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes apparition {
   0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  90% {
     opacity: 1;
   }
   100% {
     opacity: 0;
   }
 }
+
 .test123 span {
   margin-right: 25px;
 }
@@ -814,29 +835,6 @@ h4, p {
   }
   100% {
     transform: scaleX(1);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    -webkit-transform: rotate3d(0, 0, 1, 0deg);
-    transform: rotate3d(0, 0, 1, 0deg);
-  }
-  25% {
-    -webkit-transform: rotate3d(0, 0, 1, 90deg);
-    transform: rotate3d(0, 0, 1, 90deg);
-  }
-  50% {
-    -webkit-transform: rotate3d(0, 0, 1, -180deg);
-    transform: rotate3d(0, 0, 1, 180deg);
-  }
-  75% {
-    -webkit-transform: rotate3d(0, 0, 1, 270deg);
-    transform: rotate3d(0, 0, 1, 270deg);
-  }
-  100% {
-    -webkit-transform: rotate3d(0, 0, 1, 360deg);
-    transform: rotate3d(0, 0, 1, 360deg);
   }
 }
 

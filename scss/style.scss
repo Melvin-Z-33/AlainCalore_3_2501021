@@ -36,6 +36,7 @@ a {
 li{
   list-style: none;
 }
+
 h1, h2, h5 {
   font-family: $font-family-heading;
   font-size: 1.95rem;
@@ -48,22 +49,17 @@ h2 {
 
 h3{
   font-size: 1.5rem;
-
-  @media(max-width:768px){
-    font-size:2rem;
-  }
+    @media(max-width:768px){
+      font-size:2rem;
+    }
 }
-
-
 
 /*************     HEADER SECTION ***********/
 #snippet-header {
-  
   width: 100%;
   height: 300px;
   position:absolute;
   top:0;
-
 }
 
 header {
@@ -71,123 +67,116 @@ header {
     @extend %text-center;
     margin: 15px 0 4px;
   }
-
 }
 
 #header-flex{
   @extend %flex-center;
   padding-top:20px;
   width:100%;
-  a{
-    padding-left: 6%;
-  }
-  img{
-    height: 2rem;
-    margin: 0 auto;
-    padding-right: 6%;
-  }
-  .fas{
-    font-size:x-large;
-    // margin-left: -272%;
-  }
-
+    a{
+      padding-left: 6%;
+    }
+    img{
+      height: 2rem;
+      margin: 0 auto;
+      padding-right: 6%;
+    }
+    .fas{
+      font-size:x-large;
+      // margin-left: -272%;
+    }
 }
-
-
 
 /*************  RESERVATION SECTION *******/
 #reservation_localisation {
   @extend %flex-center;
   background-color: $color-background02;
   height: 50px;
-  #map-point {
-    margin-right: 10px;
-  }
-  p {
-    padding-right: 40px;
-  }
+    #map-point {
+      margin-right: 10px;
+    }
+    p {
+      padding-right: 40px;
+    }
 }
 
 #reservation_texte {
   @extend %flex-center-column;
   background-color: $color-background01;
   padding: 20px 0;
-
-  & > * {
-    margin: 5px auto;
-    text-align: center;
-  }
-  h2 {
-    margin-top: 10px;
-  }
-  p {
-    color: grey;
-    margin-bottom: 20px;
-  }
-  a{
-    margin-bottom:33px;
-  }
+    & > * {
+      margin: 5px auto;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+    p {
+      color: grey;
+      margin-bottom: 20px;
+    }
+    a{
+      margin-bottom:33px;
+    }
 }
-
-
 
 /********** Fonctionnement section ***********/
 #fonctionnement {
-  h3 {
-    margin: 10% 0 3%;
-    padding-left: 5%;
-  }
-  ol {
-    @extend %flex-center-column;
-    list-style: none;
-    counter-reset: li;
-    @media(min-width:799px){
-      flex-direction: row;
-      flex-wrap: wrap;
+    h3 {
+      margin: 10% 0 3%;
+      padding-left: 5%;
+    }
+    ol {
+      @extend %flex-center-column;
+      list-style: none;
+      counter-reset: li;
+        @media(min-width:799px){
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+    }
+    li {
+      counter-increment: li;
+      @extend%flex-center;
+      position: relative;
+      margin: 4% 0;
+      width: 90%;
+      height: 55px;
+      background-color: $color-background01;
+      border: 1px solid $color-background01;
+      border-radius: 17px;
+      box-shadow: 2px 5px 5px $color-background02;
+        @media(min-width:799px){
+          width:18rem;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          margin-left: 4%;
+          align-content: center;
+        }
+    }
+    li::before {
+      content: counter(li);
+      @extend%flex-center;
+      color: $color-text02;
+      width: 18px;
+      height:20px;
+      margin-left: -1em;
+      border-radius: 10px;
+      border: 1px solid $color-primaire;
+      background-color: $color-primaire;
+      text-align: center;
+      position: absolute;
+      left: 7px;
+    }
+    span {
+      position: absolute;
+      left: 26px;
+      color: grey;
+    }
+    .fa-store {
+      color: $color-primaire;
     }
   }
-  li {
-    counter-increment: li;
-    @extend%flex-center;
-    position: relative;
-    margin: 4% 0;
-    width: 90%;
-    height: 55px;
-    background-color: $color-background01;
-    border: 1px solid $color-background01;
-    border-radius: 17px;
-    box-shadow: 2px 5px 5px $color-background02;
-    @media(min-width:799px){
-      width:18rem;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin-left: 4%;
-      align-content: center;
-    }
-  }
-  li::before {
-    content: counter(li);
-    @extend%flex-center;
-    color: $color-text02;
-    width: 18px;
-    height:20px;
-    margin-left: -1em;
-    border-radius: 10px;
-    border: 1px solid $color-primaire;
-    background-color: $color-primaire;
-    text-align: center;
-    position: absolute;
-    left: 7px;
-  }
-  span {
-    position: absolute;
-    left: 26px;
-    color: grey;
-  }
-  .fa-store {
-    color: $color-primaire;
-  }
-}
 
 .fa-bars{
   margin-left: 7px;
@@ -200,20 +189,19 @@ header {
   padding-top: 12%;
   width: 100vw;
   padding-bottom: 200px;
-  h3 {
-  margin-top: 10px;
-    padding-left: 5%;
-  }
+    h3 {
+    margin-top: 10px;
+      padding-left: 5%;
+    }
 }
 
 #restaurant_flex {
   @extend %flex-center-column;
-  @media(min-width:799px)
-  {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
+    @media(min-width:799px)
+    {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   a {
     margin: 16px;
     width: 90%;
@@ -235,7 +223,6 @@ header {
     text-align: center;
     padding: 5px;
   }
-
   img {
     width: 100%;
     height: 159px;
@@ -250,9 +237,7 @@ header {
   .restaurant__paragraphe{
     font-weight:$font-weight-paragraph;
   }
- 
 }
-
 
 .restaurant__figcaption--flex {
   width: 100%;
@@ -262,7 +247,7 @@ header {
   align-items: center;
   display: flex;
   background-color: white;
-    border-radius: 0px 0px 20px 20px;
+  border-radius: 0px 0px 20px 20px;
     span{
     margin-right:25px;
     }
@@ -277,15 +262,14 @@ header {
       opacity: 0;
       transition-delay: 300ms;
     }
-  button {
+    button {
     background-color: white;
     position:relative;
-  border: none;
-
+    border: none;
       &:hover i:nth-child(2){
           animation: filling 1000ms;
       }
-  @keyframes filling{
+      @keyframes filling{
       0% {
           transform: scaleX(0);
           opacity: .1;
@@ -308,8 +292,6 @@ header {
   }
   }
 }
-
-
 
 .test123{
   width:337px;
@@ -334,7 +316,6 @@ header {
       position: absolute;
       right: 1px;
       bottom: 27px;
-      
   }
     }
     .fa-heart{
@@ -351,14 +332,7 @@ header {
   button {
     background-color: white;
     position:relative;
-  border: none;
-
-    
-    // &:hover i:nth-child(2){
-    //   opacity: 1;
-
-    // }
-    
+    border: none;
       &:hover i:nth-child(2){
           animation: filling 1000ms;
       }
@@ -384,14 +358,7 @@ header {
           transform: scaleX(1);
       }
   }
-
 }
-
-
-
-
-
-
 
 
 
@@ -406,7 +373,6 @@ header {
       color: $color-text02;
     }
   }
-
 
 
 footer {
@@ -442,10 +408,6 @@ footer {
 
 
 
-
-
-
-
 /******* MODELE PAGE **********/
 
 #header__image{
@@ -453,15 +415,11 @@ footer {
   margin-top:65px;
   width:100%;
   height:200px;
-
-@media(min-width:500px){
-  object-fit:cover ;
+    @media(min-width:500px){
+      object-fit:cover ;
+    }
+  }
 }
-}
-}
-
-
-
 
 main{
   position: relative;
@@ -476,13 +434,11 @@ main{
   #heading__main{
     display: flex;
     justify-content: space-between;
-
-    @media (min-width:500px) {
-      justify-content: center;
-      flex-direction: column;
-      align-content: center;
-
-    }
+      @media (min-width:500px) {
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+      }
   }
 
   h2{
@@ -490,7 +446,6 @@ main{
     @media (min-width:500px) {
       margin:10px auto;
   }
-  
   .button__heart{
     border:none;
     margin-right:5%;
@@ -503,7 +458,7 @@ main{
   }
 
   .fa-heart{
-    size: 25px;
+    font-size: 25px;
     background-color: $color-background01;
   }
   }
@@ -535,7 +490,6 @@ main{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-    
     }
       }
     .menu__link{
@@ -545,7 +499,7 @@ main{
       height:65px;
       background-color: white;
       margin-top: 25px;
-      border-radius: 14px; 
+      border-radius: 14px;
       -webkit-animation-name: taglineEmerge;
       animation-name: taglineEmerge;
       -webkit-animation-duration: 1400ms;
@@ -557,11 +511,11 @@ main{
       @media(min-width:500px){
         width:447px;
         margin:25px auto;
-       }
-       @media(min-width:1000px){
+      }
+      @media(min-width:1000px){
         width: 393px;
         margin: 23px;
-       }
+      }
         &:hover span{
           transform: scaleX(1);
           width: 20%;
@@ -580,6 +534,30 @@ main{
         }
       }
     }
+    @keyframes rotate {
+      0% {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+      }
+      25% {
+        -webkit-transform: rotate3d(0, 0, 1, 90deg);
+        transform: rotate3d(0, 0, 1, 90deg);
+      }
+      50% {
+        -webkit-transform: rotate3d(0, 0, 1, -180deg);
+        transform: rotate3d(0, 0, 1, 180deg);
+      }
+      75% {
+        -webkit-transform: rotate3d(0, 0, 1, 270deg);
+        transform: rotate3d(0, 0, 1, 270deg);
+      }
+      100% {
+        -webkit-transform: rotate3d(0, 0, 1, 360deg);
+        transform: rotate3d(0, 0, 1, 360deg);
+      }
+    }
+
+
     .block-1{
       width: 100%;
       padding: 0 14px;
@@ -601,7 +579,7 @@ main{
     .menu__prix{
       justify-self: end;
     }
- 
+
   .check{
     width: 0%;
     display: flex;
@@ -669,7 +647,7 @@ main{
 
 
 
-
+// ********************* ANIMATION ******************
 
 
 // animation intro ecran blan
@@ -706,50 +684,20 @@ background-color: white;
 
 
 
-// animation spinner debut
+// animation spinner chargement
 
-.lds-spinner {
-  color:official;
-  display: block;
-  position: fixed;
-  
-  width: 80px;
-  height: 80px;
-  top: 35%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  z-index:2;  
-  -webkit-animation-name: apparition;
-animation-name: apparition;
--webkit-animation-duration: 3s;
-animation-duration: 3s;
--webkit-animation-fill-mode: forwards;
-animation-fill-mode: forwards; 
-@keyframes apparition {
-  0% {
-      opacity: 1;
-  }
-  25%{
-    opacity: 1;
-  }
-  50%{
-    opacity: 1;
-  }
-  75%{
-    opacity:1;
-  }
-  90%{
-    opacity:1;
-  }
-  100% {
-      opacity: 0;
-  }
-
-  }
-}
+// forme du spinner
 .lds-spinner div {
   transform-origin: 40px 40px;
   animation: lds-spinner 1.2s linear infinite;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .lds-spinner div:after {
   content: " ";
@@ -810,14 +758,50 @@ animation-fill-mode: forwards;
   transform: rotate(330deg);
   animation-delay: 0s;
 }
-@keyframes lds-spinner {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+
+
+
+.lds-spinner {
+  display: block;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  top: 35%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  z-index:2;
+  -webkit-animation-name: apparition;
+  animation-name: apparition;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+    @keyframes apparition {
+      0% {
+          opacity: 1;
+      }
+      25%{
+        opacity: 1;
+      }
+      50%{
+        opacity: 1;
+      }
+      75%{
+        opacity:1;
+      }
+      90%{
+        opacity:1;
+      }
+      100% {
+          opacity: 0;
+      }
+    }
 }
+
+
+
+
 
 
 
@@ -837,14 +821,13 @@ animation-fill-mode: forwards;
       opacity: 0;
       transition-delay: 300ms;
     }
-  button {
-    background-color: white;
-    position:relative;
-  border: none;
-
-      &:hover i:nth-child(2){
-          animation: filling 1000ms;
-      }
+    button {
+      background-color: white;
+      position:relative;
+      border: none;
+        &:hover i:nth-child(2){
+            animation: filling 1000ms;
+        }
 
   @keyframes filling{
       0% {
@@ -871,34 +854,8 @@ animation-fill-mode: forwards;
 }
 
 
-@keyframes rotate {
-  0% {
-    -webkit-transform: rotate3d(0, 0, 1, 0deg);
-    transform: rotate3d(0, 0, 1, 0deg);
-  }
-  25% {
-    -webkit-transform: rotate3d(0, 0, 1, 90deg);
-    transform: rotate3d(0, 0, 1, 90deg);
-  }
-  50% {
-    -webkit-transform: rotate3d(0, 0, 1, -180deg);
-    transform: rotate3d(0, 0, 1, 180deg);
-  }
-  75% {
-    -webkit-transform: rotate3d(0, 0, 1, 270deg);
-    transform: rotate3d(0, 0, 1, 270deg);
-  }
-  100% {
-    -webkit-transform: rotate3d(0, 0, 1, 360deg);
-    transform: rotate3d(0, 0, 1, 360deg);
-  }
-}
 
 
 
 
-// $breakpoint: (
-//   ipad: 768px,
-//   key-02: value-02,
-//   key-03: value-03
-// )
+
