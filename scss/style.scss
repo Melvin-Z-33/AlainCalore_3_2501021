@@ -20,6 +20,8 @@ body{
   position:relative;
   margin:0;
   overflow-x: hidden;
+  max-width: 1200px;
+  margin: auto;
 }
 
 a {
@@ -125,6 +127,9 @@ header {
     h3 {
       margin: 10% 0 3%;
       padding-left: 5%;
+      @media(min-width:500px){
+        margin-top:5%;
+      }
     }
     ol {
       @extend %flex-center-column;
@@ -158,7 +163,7 @@ header {
       content: counter(li);
       @extend%flex-center;
       color: $color-text02;
-      width: 18px;
+      width: 17px;
       height:20px;
       margin-left: -1em;
       border-radius: 10px;
@@ -166,29 +171,33 @@ header {
       background-color: $color-primaire;
       text-align: center;
       position: absolute;
-      left: 7px;
+      left: 4px;
+      font-size:12px;
     }
     span {
       position: absolute;
       left: 26px;
       color: grey;
-    }
-    .fa-store {
-      color: $color-primaire;
+      &:hover{
+        color: $color-primaire;
+      }
     }
   }
 
 .fa-bars{
-  margin-left: 7px;
+  margin-left: 2px;
 }
 
 /********** restaurants section ***********/
 #restaurant {
   background-color: $color-background01;
+  width: 100%;
   margin-top:  50px;
   padding-top: 12%;
-  width: 100vw;
   padding-bottom: 200px;
+    @media(min-width:500px){
+      padding-top:21px;
+    }
     h3 {
     margin-top: 10px;
       padding-left: 5%;
@@ -228,11 +237,17 @@ header {
     height: 159px;
     border-radius: 30px 30px 0 0;
     object-fit: cover;
-    object-position: bottom;
+    object-position: center;
   }
   figcaption {
     background-color: white;
-    border-radius: 0px 0px 30px 30px;
+    border-radius: 0px 0px 17px 17px;
+    display: grid;
+  grid-template-rows: 50%;
+  grid-template-columns: 50%;
+  align-content: baseline;
+  padding: 0 20px;
+
   }
   .restaurant__paragraphe{
     font-weight:$font-weight-paragraph;
@@ -293,13 +308,13 @@ header {
   }
 }
 
-.test123{
+.restaurant__block{
   width:337px;
   position:relative;
   @media(min-width:799px){
     width: 339px;
     position: relative;
-    margin-right: 46px;}
+    margin-right: 67px;}
 
   .restaurant__figcaption--flex {
     width: 100%;
@@ -314,8 +329,8 @@ header {
 
     span{
       position: absolute;
-      right: 1px;
-      bottom: 27px;
+      right: 39px;
+      bottom: 36px;
   }
     }
     .fa-heart{
@@ -365,7 +380,7 @@ header {
 
 /********** footer section ***************/
 #snippet-footer {
-  width: 104%;
+  width: 100%;
   height: 187px;
   position:absolute;
   bottom:0;
@@ -378,19 +393,24 @@ header {
 footer {
   background-color: $color-background-footer;
   color: $color-text02;
-  padding: 20px;
+  padding-top: 20px;
+  padding-left:20px;
   height:100vh;
 
-  h4 {
-    margin-top: 41px;
+
+  h5 {
+    margin-bottom: 10px;
     font-size: 1.3rem;
   }
   #footer__links {
-    margin: 5% 0;
+    margin: 0;
+      & > *{
+        margin-bottom: 5px;
+      }
   }
   p {
-    margin-top: 2%;
-    font-size: 0.7rem;
+    margin-top: 0;
+    font-size: 0.9rem;
   }
   p:nth-child(3){
     margin:2px;
@@ -400,6 +420,7 @@ footer {
   }
   a {
     color: $color-text02;
+    font-size: 0.9rem;
     &:hover{
       color: $color-text02;
     }
@@ -433,7 +454,7 @@ main{
 
   #heading__main{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
       @media (min-width:500px) {
         justify-content: center;
         flex-direction: column;
@@ -571,8 +592,8 @@ main{
       justify-content: space-between;
     }
     .menu__paragraph{
-      font-weight: 300;
-      width: 251px;
+      font-weight: 299;
+      width: 84%;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
@@ -599,7 +620,6 @@ main{
     color:$color-tertiaire;
     font-size:12px;
     padding: 6px;
- 
   }
 
 
@@ -613,8 +633,7 @@ main{
       transform: translateY(0px);
       opacity: 1;
   }
-
-  }
+}
 
   h4, p{
     text-overflow: ellipsis;
@@ -643,7 +662,6 @@ main{
 }
 
 }
-
 
 
 
@@ -803,10 +821,7 @@ background-color: white;
 
 
 
-
-
-
-.test123{
+.restaurant__block{
   span{
     margin-right:25px;
     }
