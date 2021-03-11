@@ -575,7 +575,8 @@ main .menu__link:nth-child(3) {
 }
 .block-1 {
   width: 100%;
-  padding: 0 14px;
+  padding-right: 5px;
+  padding-left: 8px;
 }
 
 h4 {
@@ -586,13 +587,23 @@ h4 {
 .block-1__bis {
   display: flex;
   justify-content: space-between;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .menu__paragraph {
-  font-weight: 299;
-  width: 84%;
+  font-weight: 300;
+  min-width: 69%;
+  max-width: 82%;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
+}
+@media (min-width: 489px) {
+  .menu__paragraph {
+    max-width: 84%;
+  }
 }
 
 .menu__prix {
@@ -607,7 +618,7 @@ h4 {
   background-color: #99E2D0;
   transform: scaleX(0);
   transition: all 0.5s;
-  transform-origin: right 100%;
+  transform-origin: right 60%;
   border-radius: 0 15px 15px 0;
 }
 

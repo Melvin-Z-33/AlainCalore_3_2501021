@@ -568,7 +568,8 @@ main{
 
     .block-1{
       width: 100%;
-      padding: 0 14px;
+      padding-right: 5px;
+      padding-left:8px;
     }
     h4{
       margin-top:12px;
@@ -577,12 +578,20 @@ main{
     .block-1__bis{
       display: flex;
       justify-content: space-between;
-    }
-    .menu__paragraph{
-      font-weight: 299;
-      width: 84%;
       text-overflow: ellipsis;
       white-space: nowrap;
+      overflow: hidden;
+    }
+    .menu__paragraph{
+      font-weight: 300;
+      min-width: 69%;
+      max-width: 82%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+        @media (min-width:489px){
+          max-width: 84%;
+        }
     }
     .menu__prix{
       justify-self: end;
@@ -596,7 +605,7 @@ main{
     background-color:$color-tertiaire;
     transform: scaleX(0);
     transition: all .5s;
-    transform-origin: right 100% ;
+    transform-origin: right 60% ;
     border-radius:0 15px 15px 0;
   }
   .fa-check{
