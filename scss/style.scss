@@ -20,6 +20,8 @@ body{
   position:relative;
   margin:0;
   overflow-x: hidden;
+  max-width: 1200px;
+  margin: auto;
 }
 
 a {
@@ -36,6 +38,7 @@ a {
 li{
   list-style: none;
 }
+
 h1, h2, h5 {
   font-family: $font-family-heading;
   font-size: 1.95rem;
@@ -48,22 +51,17 @@ h2 {
 
 h3{
   font-size: 1.5rem;
-
-  @media(max-width:768px){
-    font-size:2rem;
-  }
+    @media(max-width:768px){
+      font-size:2rem;
+    }
 }
-
-
 
 /*************     HEADER SECTION ***********/
 #snippet-header {
-  
   width: 100%;
   height: 300px;
   position:absolute;
   top:0;
-
 }
 
 header {
@@ -71,154 +69,150 @@ header {
     @extend %text-center;
     margin: 15px 0 4px;
   }
-
 }
 
 #header-flex{
   @extend %flex-center;
   padding-top:20px;
-  
   width:100%;
-  a{
-    padding-left: 6%;
-  }
-  img{
-    height: 2rem;
-    margin: 0 auto;
-    padding-right: 6%;
-  }
-  .fas{
-    font-size:x-large;
-    // margin-left: -272%;
-  }
-
+    a{
+      padding-left: 6%;
+    }
+    img{
+      height: 2rem;
+      margin: 0 auto;
+      padding-right: 6%;
+    }
+    .fas{
+      font-size:x-large;
+    }
 }
-
-
 
 /*************  RESERVATION SECTION *******/
 #reservation_localisation {
   @extend %flex-center;
   background-color: $color-background02;
   height: 50px;
-  #map-point {
-    margin-right: 10px;
-  }
-  p {
-    padding-right: 40px;
-  }
+    #map-point {
+      margin-right: 10px;
+    }
+    p {
+      padding-right: 40px;
+    }
 }
 
 #reservation_texte {
   @extend %flex-center-column;
   background-color: $color-background01;
   padding: 20px 0;
-
-  & > * {
-    margin: 5px auto;
-    text-align: center;
-  }
-  h2 {
-    margin-top: 10px;
-  }
-  p {
-    color: grey;
-    margin-bottom: 20px;
-  }
-  a{
-    margin-bottom:33px;
-  }
+    & > * {
+      margin: 5px auto;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+    p {
+      color: grey;
+      margin-bottom: 20px;
+    }
+    a{
+      margin-bottom:33px;
+    }
 }
-
-
 
 /********** Fonctionnement section ***********/
 #fonctionnement {
-  h3 {
-    margin: 10% 0 3%;
-    padding-left: 5%;
-  }
-  ol {
-    @extend %flex-center-column;
-    list-style: none;
-    counter-reset: li;
-    @media(min-width:799px){
-      flex-direction: row;
-      flex-wrap: wrap;
+    h3 {
+      margin: 10% 0 3%;
+      padding-left: 5%;
+      @media(min-width:500px){
+        margin-top:5%;
+      }
+    }
+    ol {
+      @extend %flex-center-column;
+      list-style: none;
+      counter-reset: li;
+        @media(min-width:799px){
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+    }
+    li {
+      counter-increment: li;
+      @extend%flex-center;
+      position: relative;
+      margin: 4% 0;
+      width: 90%;
+      height: 55px;
+      background-color: $color-background01;
+      border: 1px solid $color-background01;
+      border-radius: 17px;
+      box-shadow: 2px 5px 5px $color-background02;
+        @media(min-width:799px){
+          width:18rem;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          margin-left: 4%;
+          align-content: center;
+        }
+    }
+    li::before {
+      content: counter(li);
+      @extend%flex-center;
+      color: $color-text02;
+      width: 17px;
+      height:20px;
+      margin-left: -1em;
+      border-radius: 10px;
+      border: 1px solid $color-primaire;
+      background-color: $color-primaire;
+      text-align: center;
+      position: absolute;
+      left: 4px;
+      font-size:12px;
+    }
+    span {
+      position: absolute;
+      left: 26px;
+      color: grey;
+      &:hover{
+        color: $color-primaire;
+      }
     }
   }
-  li {
-    counter-increment: li;
-    @extend%flex-center;
-    position: relative;
-    margin: 4% 0;
-    width: 90%;
-    height: 55px;
-    background-color: $color-background01;
-    border: 1px solid $color-background01;
-    border-radius: 17px;
-    box-shadow: 2px 5px 5px $color-background02;
-    @media(min-width:799px){
-      width:18rem;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin-left: 4%;
-      align-content: center;
-    }
-  }
-  li::before {
-    content: counter(li);
-    @extend%flex-center;
-    color: $color-text02;
-    width: 18px;
-    height:20px;
-    margin-left: -1em;
-    border-radius: 10px;
-    border: 1px solid $color-primaire;
-    background-color: $color-primaire;
-    text-align: center;
-    position: absolute;
-    left: 7px;
-  }
-  span {
-    position: absolute;
-    left: 26px;
-    color: grey;
-  }
-  .fa-store {
-    color: $color-primaire;
-  }
-}
 
 .fa-bars{
-  margin-left: 7px;
+  margin-left: 2px;
 }
 
 /********** restaurants section ***********/
 #restaurant {
   background-color: $color-background01;
+  width: 100%;
   margin-top:  50px;
   padding-top: 12%;
-  width: 100vw;
   padding-bottom: 200px;
-  h3 {
-  margin-top: 10px;
-    padding-left: 5%;
-  }
+    @media(min-width:500px){
+      padding-top:21px;
+    }
+    h3 {
+    margin-top: 10px;
+      padding-left: 5%;
+    }
 }
 
 #restaurant_flex {
   @extend %flex-center-column;
-  @media(min-width:799px)
-  {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
+    @media(min-width:799px)
+    {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   a {
     margin: 16px;
     width: 90%;
-  
   }
   figure {
     @extend %flex-center-column;
@@ -236,34 +230,38 @@ header {
     text-align: center;
     padding: 5px;
   }
-
   img {
     width: 100%;
     height: 159px;
     border-radius: 30px 30px 0 0;
     object-fit: cover;
-    object-position: bottom;
+    object-position: center;
   }
   figcaption {
     background-color: white;
-    border-radius: 0px 0px 30px 30px;
+    border-radius: 0px 0px 17px 17px;
+    display: grid;
+  grid-template-rows: 50%;
+  grid-template-columns: 50%;
+  align-content: baseline;
+  padding: 0 20px;
   }
   .restaurant__paragraphe{
     font-weight:$font-weight-paragraph;
   }
- 
 }
-
 
 .restaurant__figcaption--flex {
   width: 100%;
   height:56px;
   padding: 0 14px;
+  padding: 0 14px;
   justify-content: space-between;
   align-items: center;
   display: flex;
-  background-color: white;
-    border-radius: 0px 0px 20px 20px;
+
+
+
     span{
     margin-right:25px;
     }
@@ -278,15 +276,14 @@ header {
       opacity: 0;
       transition-delay: 300ms;
     }
-  button {
+    button {
     background-color: white;
     position:relative;
-  border: none;
-
+    border: none;
       &:hover i:nth-child(2){
           animation: filling 1000ms;
       }
-  @keyframes filling{
+      @keyframes filling{
       0% {
           transform: scaleX(0);
           opacity: .1;
@@ -310,96 +307,68 @@ header {
   }
 }
 
-
-
-.test123{
+.restaurant__block{
   width:337px;
   position:relative;
   @media(min-width:799px){
-    width: 339spx;
+    width: 339px;
     position: relative;
-    margin-right: 46px;}
-
-  .restaurant__figcaption--flex {
-    width: 100%;
-    height:56px;
-    padding: 0 14px;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    background-color: white;
-      border-radius: 0px 0px 20px 20px;
-  }
+    margin-right: 67px;}
 
     span{
       position: absolute;
-      right: 1px;
-      bottom: 27px;
-      
+      right: 39px;
+      bottom: 36px;
   }
-    }
-    .fa-heart{
-      font-size: large;
-    }
-    i:nth-child(2){
-      color:$color-primaire;
-      position:absolute;
-      left:0px;
-      bottom:1px;
-      opacity: 0;
-      transition-delay: 300ms;
-    }
-  button {
-    background-color: white;
-    position:relative;
+  }
+  .fa-heart{
+    font-size: large;
+  }
+  i:nth-child(2){
+    color:$color-primaire;
+    position:absolute;
+    left:0px;
+    bottom:1px;
+    opacity: 0;
+    transition-delay: 300ms;
+  }
+button {
+  background-color: white;
+  position:relative;
   border: none;
-
-    
-    // &:hover i:nth-child(2){
-    //   opacity: 1;
-
-    // }
-    
-      &:hover i:nth-child(2){
-          animation: filling 1000ms;
-      }
+    &:hover i:nth-child(2){
+        animation: filling 1000ms;
+    }
 
   @keyframes filling{
-      0% {
-          transform: scaleX(0);
-          opacity: .1;
-      }
-      17% {
-          transform: scaleX(.18);
-      }
-      24% {
-          transform: scaleX(.4);
-      }
-      46% {
-          transform: scaleX(.81);
-      }
-      85% {
-          opacity: 1;
-      }
-      100% {
-          transform: scaleX(1);
-      }
+    0% {
+        transform: scaleX(0);
+        opacity: .1;
+    }
+    17% {
+        transform: scaleX(.18);
+    }
+    24% {
+        transform: scaleX(.4);
+    }
+    46% {
+        transform: scaleX(.81);
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(1);
+    }
   }
-
 }
-
-
-
-
-
-
 
 
 
 
 /********** footer section ***************/
 #snippet-footer {
-  width: 104%;
+  width: 100%;
   height: 187px;
   position:absolute;
   bottom:0;
@@ -409,22 +378,27 @@ header {
   }
 
 
-
 footer {
   background-color: $color-background-footer;
   color: $color-text02;
-  padding: 5%;
+  padding-top: 20px;
+  padding-left:20px;
+  height:100vh;
 
-  h4 {
-    margin-top: 41px;
+
+  h5 {
+    margin-bottom: 10px;
     font-size: 1.3rem;
   }
   #footer__links {
-    margin: 5% 0;
+    margin: 0;
+      & > *{
+        margin-bottom: 5px;
+      }
   }
   p {
-    margin-top: 2%;
-    font-size: 0.7rem;
+    margin-top: 0;
+    font-size: 0.9rem;
   }
   p:nth-child(3){
     margin:2px;
@@ -434,15 +408,12 @@ footer {
   }
   a {
     color: $color-text02;
+    font-size: 0.9rem;
     &:hover{
       color: $color-text02;
     }
   }
 }
-
-
-
-
 
 
 
@@ -453,11 +424,11 @@ footer {
   margin-top:65px;
   width:100%;
   height:200px;
+    @media(min-width:500px){
+      object-fit:cover ;
+    }
+  }
 }
-}
-
-
-
 
 main{
   position: relative;
@@ -471,25 +442,38 @@ main{
 
   #heading__main{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+      @media (min-width:500px) {
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+      }
   }
 
   h2{
     font-size:1.8em;
+    @media (min-width:500px) {
+      margin:10px auto;
   }
   .button__heart{
     border:none;
     margin-right:5%;
     font-size:1.2rem;
     background-color: $color-background01;
+      @media (min-width:500px) {
+        margin:10px auto;
+    }
   }
 
   .fa-heart{
-    size: 25px;
+    font-size: 25px;
     background-color: $color-background01;
   }
+  }
 
-}
+  .pageMenu_heart{
+    background-color: $color-background01;
+  }
 
 .menu{
   margin-top:30px;
@@ -500,7 +484,22 @@ main{
       width: 55px;
       height:31px;
       font-size:1.2rem;
+      @media(min-width:500px){
+        margin:0 auto;
+      }
+      @media(min-width:1000px){
+        margin:27px auto;
+      }
     }
+    }
+
+    .menu__list{
+      @media(min-width:1000px){
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+      }
     .menu__link{
       display: flex;
       justify-content: space-between;
@@ -508,7 +507,7 @@ main{
       height:65px;
       background-color: white;
       margin-top: 25px;
-      border-radius: 14px; 
+      border-radius: 14px;
       -webkit-animation-name: taglineEmerge;
       animation-name: taglineEmerge;
       -webkit-animation-duration: 1400ms;
@@ -517,9 +516,21 @@ main{
       animation-fill-mode: forwards;
       transform: translateY(50px);
       opacity: 0;
+      @media(min-width:500px){
+        width:447px;
+        margin:25px auto;
+      }
+      @media(min-width:1000px){
+        width: 393px;
+        margin: 23px;
+      }
         &:hover span{
           transform: scaleX(1);
           width: 20%;
+        }
+        &:hover  .fa-check{
+          -webkit-animation: rotate 500ms normal linear ;
+          animation: rotate 500ms normal linear ;
         }
         &:nth-child(2){
           -webkit-animation-delay: 300ms;
@@ -529,7 +540,32 @@ main{
           -webkit-animation-delay: 600ms;
           animation-delay: 600ms;
         }
+      }
     }
+    @keyframes rotate {
+      0% {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+      }
+      25% {
+        -webkit-transform: rotate3d(0, 0, 1, 90deg);
+        transform: rotate3d(0, 0, 1, 90deg);
+      }
+      50% {
+        -webkit-transform: rotate3d(0, 0, 1, -180deg);
+        transform: rotate3d(0, 0, 1, 180deg);
+      }
+      75% {
+        -webkit-transform: rotate3d(0, 0, 1, 270deg);
+        transform: rotate3d(0, 0, 1, 270deg);
+      }
+      100% {
+        -webkit-transform: rotate3d(0, 0, 1, 360deg);
+        transform: rotate3d(0, 0, 1, 360deg);
+      }
+    }
+
+
     .block-1{
       width: 100%;
       padding: 0 14px;
@@ -543,16 +579,16 @@ main{
       justify-content: space-between;
     }
     .menu__paragraph{
-      font-weight: 300;
-      width: 251px;
+      font-weight: 299;
+      width: 84%;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
     .menu__prix{
       justify-self: end;
     }
- 
-  span{
+
+  .check{
     width: 0%;
     display: flex;
     justify-content: center;
@@ -572,8 +608,6 @@ main{
     font-size:12px;
     padding: 6px;
   }
-}
-
 
 
 @keyframes taglineEmerge {
@@ -586,8 +620,7 @@ main{
       transform: translateY(0px);
       opacity: 1;
   }
-
-  }
+}
 
   h4, p{
     text-overflow: ellipsis;
@@ -619,8 +652,7 @@ main{
 
 
 
-
-
+// ********************* ANIMATION PAGE D'ACCUEIL ******************
 
 
 // animation intro ecran blan
@@ -657,50 +689,20 @@ background-color: white;
 
 
 
-// animation spinner debut
+// animation spinner chargement
 
-.lds-spinner {
-  color:official;
-  display: block;
-  position: fixed;
-  
-  width: 80px;
-  height: 80px;
-  top: 35%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  z-index:2;  
-  -webkit-animation-name: apparition;
-animation-name: apparition;
--webkit-animation-duration: 3s;
-animation-duration: 3s;
--webkit-animation-fill-mode: forwards;
-animation-fill-mode: forwards; 
-@keyframes apparition {
-  0% {
-      opacity: 1;
-  }
-  25%{
-    opacity: 1;
-  }
-  50%{
-    opacity: 1;
-  }
-  75%{
-    opacity:1;
-  }
-  90%{
-    opacity:1;
-  }
-  100% {
-      opacity: 0;
-  }
-
-  }
-}
+// forme du spinner
 .lds-spinner div {
   transform-origin: 40px 40px;
   animation: lds-spinner 1.2s linear infinite;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .lds-spinner div:after {
   content: " ";
@@ -761,19 +763,51 @@ animation-fill-mode: forwards;
   transform: rotate(330deg);
   animation-delay: 0s;
 }
-@keyframes lds-spinner {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+
+
+.lds-spinner {
+  display: block;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  top: 35%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  z-index:2;
+  -webkit-animation-name: apparition;
+  animation-name: apparition;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+    @keyframes apparition {
+      0% {
+          opacity: 1;
+      }
+      25%{
+        opacity: 1;
+      }
+      50%{
+        opacity: 1;
+      }
+      75%{
+        opacity:1;
+      }
+      90%{
+        opacity:1;
+      }
+      100% {
+          opacity: 0;
+      }
+    }
 }
 
 
 
+// ********** Apparition Menu Restaurant ********
 
-.test123{
+.restaurant__block{
   span{
     margin-right:25px;
     }
@@ -788,14 +822,13 @@ animation-fill-mode: forwards;
       opacity: 0;
       transition-delay: 300ms;
     }
-  button {
-    background-color: white;
-    position:relative;
-  border: none;
-
-      &:hover i:nth-child(2){
-          animation: filling 1000ms;
-      }
+    button {
+      background-color: white;
+      position:relative;
+      border: none;
+        &:hover i:nth-child(2){
+            animation: filling 1000ms;
+        }
 
   @keyframes filling{
       0% {
@@ -822,8 +855,8 @@ animation-fill-mode: forwards;
 }
 
 
-$breakpoint: (
-  ipad: 768px,
-  key-02: value-02,
-  key-03: value-03
-);
+
+
+
+
+
