@@ -85,7 +85,6 @@ header {
     }
     .fas{
       font-size:x-large;
-      // margin-left: -272%;
     }
 }
 
@@ -214,7 +213,6 @@ header {
   a {
     margin: 16px;
     width: 90%;
-  
   }
   figure {
     @extend %flex-center-column;
@@ -247,7 +245,6 @@ header {
   grid-template-columns: 50%;
   align-content: baseline;
   padding: 0 20px;
-
   }
   .restaurant__paragraphe{
     font-weight:$font-weight-paragraph;
@@ -258,11 +255,13 @@ header {
   width: 100%;
   height:56px;
   padding: 0 14px;
+  padding: 0 14px;
   justify-content: space-between;
   align-items: center;
   display: flex;
-  background-color: white;
-  border-radius: 0px 0px 20px 20px;
+
+
+
     span{
     margin-right:25px;
     }
@@ -316,62 +315,51 @@ header {
     position: relative;
     margin-right: 67px;}
 
-  .restaurant__figcaption--flex {
-    width: 100%;
-    height:56px;
-    padding: 0 14px;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    background-color: white;
-      border-radius: 0px 0px 20px 20px;
-  }
-
     span{
       position: absolute;
       right: 39px;
       bottom: 36px;
   }
+  }
+  .fa-heart{
+    font-size: large;
+  }
+  i:nth-child(2){
+    color:$color-primaire;
+    position:absolute;
+    left:0px;
+    bottom:1px;
+    opacity: 0;
+    transition-delay: 300ms;
+  }
+button {
+  background-color: white;
+  position:relative;
+  border: none;
+    &:hover i:nth-child(2){
+        animation: filling 1000ms;
     }
-    .fa-heart{
-      font-size: large;
-    }
-    i:nth-child(2){
-      color:$color-primaire;
-      position:absolute;
-      left:0px;
-      bottom:1px;
-      opacity: 0;
-      transition-delay: 300ms;
-    }
-  button {
-    background-color: white;
-    position:relative;
-    border: none;
-      &:hover i:nth-child(2){
-          animation: filling 1000ms;
-      }
 
   @keyframes filling{
-      0% {
-          transform: scaleX(0);
-          opacity: .1;
-      }
-      17% {
-          transform: scaleX(.18);
-      }
-      24% {
-          transform: scaleX(.4);
-      }
-      46% {
-          transform: scaleX(.81);
-      }
-      85% {
-          opacity: 1;
-      }
-      100% {
-          transform: scaleX(1);
-      }
+    0% {
+        transform: scaleX(0);
+        opacity: .1;
+    }
+    17% {
+        transform: scaleX(.18);
+    }
+    24% {
+        transform: scaleX(.4);
+    }
+    46% {
+        transform: scaleX(.81);
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(1);
+    }
   }
 }
 
@@ -472,10 +460,9 @@ main{
     margin-right:5%;
     font-size:1.2rem;
     background-color: $color-background01;
-    @media (min-width:500px) {
-      margin:10px auto;
-
-  }
+      @media (min-width:500px) {
+        margin:10px auto;
+    }
   }
 
   .fa-heart{
@@ -665,7 +652,7 @@ main{
 
 
 
-// ********************* ANIMATION ******************
+// ********************* ANIMATION PAGE D'ACCUEIL ******************
 
 
 // animation intro ecran blan
@@ -778,7 +765,6 @@ background-color: white;
 }
 
 
-
 .lds-spinner {
   display: block;
   position: fixed;
@@ -819,7 +805,7 @@ background-color: white;
 
 
 
-
+// ********** Apparition Menu Restaurant ********
 
 .restaurant__block{
   span{

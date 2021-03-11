@@ -263,11 +263,10 @@ header h1 {
   width: 100%;
   height: 56px;
   padding: 0 14px;
+  padding: 0 14px;
   justify-content: space-between;
   align-items: center;
   display: flex;
-  background-color: white;
-  border-radius: 0px 0px 20px 20px;
 }
 .restaurant__figcaption--flex span {
   margin-right: 25px;
@@ -323,16 +322,6 @@ header h1 {
     position: relative;
     margin-right: 67px;
   }
-}
-.restaurant__block .restaurant__figcaption--flex {
-  width: 100%;
-  height: 56px;
-  padding: 0 14px;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  background-color: white;
-  border-radius: 0px 0px 20px 20px;
 }
 .restaurant__block span {
   position: absolute;
